@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Muhammed Eren Kocer portfolio">
+  <rect width="1200" height="630" fill="#020305"/>
+  <defs>
+    <radialGradient id="cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3ee7ff" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#3ee7ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mint" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#72f6b2" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#72f6b2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="940" cy="120" r="320" fill="url(#cyan)"/>
+  <circle cx="240" cy="560" r="260" fill="url(#mint)"/>
+  <path d="M0 210H1200M0 420H1200M240 0V630M480 0V630M720 0V630M960 0V630" stroke="#ffffff" stroke-opacity="0.06"/>
+  <text x="84" y="225" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#3ee7ff" letter-spacing="8">ERENKCER.DEV</text>
+  <text x="80" y="330" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#ffffff">Muhammed Eren Kocer</text>
+  <text x="84" y="405" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#d5d9dc">Junior Software Developer | IT Support &amp; Odoo/Web Systems</text>
+  <text x="84" y="492" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" fill="#72f6b2">AdadaFiyat • Python • FastAPI • Web Systems</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EK">
+  <rect width="64" height="64" rx="16" fill="#020305"/>
+  <circle cx="48" cy="16" r="18" fill="#3ee7ff" opacity="0.22"/>
+  <circle cx="15" cy="50" r="16" fill="#72f6b2" opacity="0.18"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#ffffff">EK</text>
+</svg>
