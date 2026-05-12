@@ -85,6 +85,7 @@ const skillGroups = [
 
 function App() {
   useMouseGlow();
+  useScrollReveal();
 
   return (
     <main id="top" className="relative min-h-screen overflow-hidden bg-ink text-white">
@@ -93,28 +94,28 @@ function App() {
 
       <section className="relative mx-auto flex min-h-[88vh] w-full max-w-6xl flex-col justify-center px-5 pb-12 pt-24 sm:px-8 sm:pb-14 sm:pt-28 lg:px-10">
         <div className="grid items-center gap-9 lg:grid-cols-[1fr_0.88fr] lg:gap-12">
-          <div className="reveal">
-            <div className="status-badge">
+          <div className="hero-copy-block reveal">
+            <div className="status-badge hero-stagger-1">
               <span className="status-dot" />
               Junior Software Developer
             </div>
 
-            <p className="mt-6 flex items-center gap-2 text-sm text-cyan/80">
+            <p className="hero-stagger-2 mt-6 flex items-center gap-2 text-sm text-cyan/80">
               <MapPin size={16} aria-hidden="true" />
               Mağusa / Kuzey Kıbrıs
             </p>
 
-            <h1 className="mt-5 max-w-4xl font-display text-4xl font-semibold leading-[1.08] text-white sm:text-5xl">
+            <h1 className="hero-title hero-stagger-3 mt-5 max-w-4xl font-display text-4xl font-semibold leading-[1.08] text-white sm:text-5xl">
               Merhaba, ben Eren.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+            <p className="hero-stagger-4 mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
               Python, web sistemleri ve Odoo tarafında kendimi geliştiren junior software developer’ım. Tekrar eden
               işleri otomatikleştiren, veriyi daha düzenli hale getiren ve gerçek probleme dokunan küçük ama işe yarar
               sistemler geliştirmeye odaklanıyorum.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="hero-stagger-5 mt-8 flex flex-col gap-3 sm:flex-row">
               <SimpleLink href="#projects" label="Projelerimi Gör" icon={ArrowUpRight} primary />
               <SimpleLink href="#contact" label="İletişime Geç" icon={Mail} />
             </div>
@@ -178,19 +179,19 @@ function HeroVisual() {
           </p>
 
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <div className="preview-row">
+            <div className="preview-row" style={{ '--row-delay': '0ms' }}>
               <span>Odak</span>
               <strong>Fiyat verisi</strong>
             </div>
-            <div className="preview-row">
+            <div className="preview-row" style={{ '--row-delay': '90ms' }}>
               <span>Durum</span>
               <strong>Canlı proje</strong>
             </div>
-            <div className="preview-row">
+            <div className="preview-row" style={{ '--row-delay': '180ms' }}>
               <span>Backend</span>
               <strong>Python / FastAPI</strong>
             </div>
-            <div className="preview-row">
+            <div className="preview-row" style={{ '--row-delay': '270ms' }}>
               <span>Veritabanı</span>
               <strong>PostgreSQL</strong>
             </div>
@@ -395,7 +396,7 @@ function Footer() {
 
 function Section({ id, eyebrow, title, children }) {
   return (
-    <section id={id} className="section-shell reveal">
+    <section id={id} className="section-shell scroll-reveal">
       <div className="mb-8 sm:mb-10">
         <p className="mb-3 text-sm text-cyan/80">{eyebrow}</p>
         <h2 className="max-w-4xl font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">{title}</h2>
@@ -461,6 +462,33 @@ function useMouseGlow() {
         window.cancelAnimationFrame(frame);
       }
     };
+  }, []);
+}
+
+function useScrollReveal() {
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(document.querySelectorAll('.scroll-reveal'));
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      items.forEach((item) => item.classList.add('is-visible'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.12 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
   }, []);
 }
 
