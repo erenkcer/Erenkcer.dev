@@ -140,7 +140,9 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-ink/88 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-10" aria-label="Ana navigasyon">
         <a href="#top" className="group flex items-center gap-3 rounded-full focus-ring">
-          <span className="logo-mark">EK</span>
+          <span className="logo-mark">
+            <img src="/ek-logo-large.png" alt="" aria-hidden="true" />
+          </span>
           <span className="hidden text-sm text-white/70 sm:block">erenkcer.dev</span>
         </a>
 
