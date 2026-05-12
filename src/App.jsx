@@ -11,7 +11,6 @@ import {
   Linkedin,
   Mail,
   MapPin,
-  PanelTop,
   Wrench
 } from 'lucide-react';
 
@@ -170,13 +169,29 @@ function HeroVisual() {
           </a>
         </div>
 
-        <div className="screenshot-box">
-          <PanelTop className="text-cyan" size={24} aria-hidden="true" />
-          <div>
-            <p className="font-medium text-white">Screenshot alanı</p>
-            <p className="mt-1 text-sm leading-6 text-white/58">
-              Burada AdadaFiyat’ın fiyat listesi, kategori veya ürün sayfası gösterilebilir.
-            </p>
+        <div className="project-preview">
+          <p className="text-sm leading-7 text-white/68">
+            Kıbrıs’taki ürün fiyatlarını daha düzenli takip edebilmek için geliştirdiğim fiyat karşılaştırma projesi.
+            Ürün, kategori ve fiyat verilerini sade bir yapıda toplamaya odaklanıyor.
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="preview-row">
+              <span>Odak</span>
+              <strong>Fiyat verisi</strong>
+            </div>
+            <div className="preview-row">
+              <span>Durum</span>
+              <strong>Canlı proje</strong>
+            </div>
+            <div className="preview-row">
+              <span>Backend</span>
+              <strong>Python / FastAPI</strong>
+            </div>
+            <div className="preview-row">
+              <span>Veritabanı</span>
+              <strong>PostgreSQL</strong>
+            </div>
           </div>
         </div>
 
