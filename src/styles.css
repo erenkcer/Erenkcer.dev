@@ -40,11 +40,11 @@
   }
 
   .logo-mark {
-    @apply grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-white/10 bg-black/30 transition group-hover:border-cyan/[0.36] group-hover:bg-white/[0.06];
+    @apply grid h-11 w-16 place-items-center overflow-hidden rounded-xl border border-white/10 bg-black/30 transition group-hover:border-cyan/[0.36] group-hover:bg-white/[0.06];
   }
 
   .logo-mark img {
-    @apply h-9 w-9 object-contain;
+    @apply h-10 w-auto object-contain;
   }
 
   .nav-link {
