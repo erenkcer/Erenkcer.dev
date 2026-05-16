@@ -1,6 +1,18 @@
 # erenkcer.dev Portfolio
 
-Modern frontend-only portfolio site for Muhammed Eren Kocer, built with React, Vite, and Tailwind CSS.
+A modern personal portfolio website built with React, Vite, and Tailwind CSS.
+
+The website showcases my projects, technical background, CV, and web development work. It is designed as a clean public profile for my developer portfolio and is live at:
+
+https://www.erenkcer.dev
+
+## Features
+
+- Responsive portfolio layout
+- Project showcase section
+- CV view/download support
+- Modern animated interface
+- Fast static deployment
 
 ## Install
 
